@@ -223,73 +223,64 @@ def listar_categorias() -> str:
 
 
 # Registro das tools no formato function calling
+# Registro das tools no formato Anthropic function calling
 TOOLS_SCHEMA = [
     {
-        "type": "function",
-        "function": {
-            "name": "buscar_produtos",
-            "description": "Busca produtos por nome, categoria ou faixa de preço. Use quando o cliente quer encontrar um instrumento.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "nome": {"type": "string", "description": "Nome ou parte do nome do produto (ex: 'Yamaha', 'violão', 'ukulele')"},
-                    "categoria": {"type": "string", "description": "Categoria do instrumento (ex: 'Violões', 'Guitarras', 'Ukuleles')"},
-                    "preco_max": {"type": "number", "description": "Preço máximo em reais"},
-                    "preco_min": {"type": "number", "description": "Preço mínimo em reais"},
-                },
+        "name": "buscar_produtos",
+        "description": "Busca produtos por nome, categoria ou faixa de preço. Use quando o cliente quer encontrar um instrumento.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "nome": {"type": "string", "description": "Nome ou parte do nome do produto (ex: 'Yamaha', 'violão', 'ukulele')"},
+                "categoria": {"type": "string", "description": "Categoria do instrumento (ex: 'Violões', 'Guitarras', 'Ukuleles')"},
+                "preco_max": {"type": "number", "description": "Preço máximo em reais"},
+                "preco_min": {"type": "number", "description": "Preço mínimo em reais"},
             },
         },
     },
     {
-        "type": "function",
-        "function": {
-            "name": "consultar_produto_detalhe",
-            "description": "Retorna detalhes completos de um produto específico pelo ID, incluindo specs técnicas e promoção ativa.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "product_id": {"type": "integer", "description": "ID do produto"},
-                },
-                "required": ["product_id"],
+        "name": "consultar_produto_detalhe",
+        "description": "Retorna detalhes completos de um produto específico pelo ID, incluindo especificações técnicas e promoção ativa.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "product_id": {"type": "integer", "description": "ID do produto"},
             },
+            "required": ["product_id"],
         },
     },
     {
-        "type": "function",
-        "function": {
-            "name": "consultar_pedido",
-            "description": "Consulta pedido exigindo três identificadores obrigatórios: número do pedido, e-mail e nome completo do cliente. Use quando o cliente quer saber status, rastreamento ou detalhes de um pedido. Sempre peça as três informações antes de chamar.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "order_id": {"type": "integer", "description": "Número do pedido"},
-                    "email_cliente": {"type": "string", "description": "E-mail cadastrado do cliente"},
-                    "nome_cliente": {"type": "string", "description": "Nome completo do cliente"},
-                },
-                "required": ["order_id", "email_cliente", "nome_cliente"],
+        "name": "consultar_pedido",
+        "description": "Consulta pedido exigindo três identificadores obrigatórios: número do pedido, e-mail e nome completo do cliente. Use quando o cliente quer saber status, rastreamento ou detalhes de um pedido. Sempre peça as três informações antes de chamar.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "order_id": {"type": "integer", "description": "Número do pedido"},
+                "email_cliente": {"type": "string", "description": "E-mail cadastrado do cliente"},
+                "nome_cliente": {"type": "string", "description": "Nome completo do cliente"},
             },
+            "required": ["order_id", "email_cliente", "nome_cliente"],
         },
     },
     {
-        "type": "function",
-        "function": {
-            "name": "listar_promocoes_ativas",
-            "description": "Lista todas as promoções ativas com produtos, descontos e preços promocionais. Use quando o cliente perguntar sobre promoções ou descontos.",
-            "parameters": {"type": "object", "properties": {}},
+        "name": "listar_promocoes_ativas",
+        "description": "Lista todas as promoções ativas com produtos, descontos e preços promocionais. Use quando o cliente perguntar sobre promoções ou descontos.",
+        "input_schema": {
+            "type": "object",
+            "properties": {},
         },
     },
     {
-        "type": "function",
-        "function": {
-            "name": "listar_categorias",
-            "description": "Lista todas as categorias de instrumentos disponíveis na loja com quantidade de produtos. Use quando o cliente quer saber o que a loja oferece.",
-            "parameters": {"type": "object", "properties": {}},
+        "name": "listar_categorias",
+        "description": "Lista todas as categorias de instrumentos disponíveis na loja com quantidade de produtos. Use quando o cliente quer saber o que a loja oferece.",
+        "input_schema": {
+            "type": "object",
+            "properties": {},
         },
     },
 ]
 
 
-############################################
 
 
 
