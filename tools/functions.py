@@ -4,6 +4,7 @@ import json
 from tools.data_loader import DB
 import pandas as pd
 import numpy as np
+from datetime import date
 
 class NumpyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -167,6 +168,23 @@ def consultar_pedido(order_id: int = None, email_cliente: str = None, nome_clien
             info["rastreamento"] = row["tracking_code"]
         if pd.notna(row["estimated_delivery"]) and row["estimated_delivery"]:
             info["previsao_entrega"] = str(row["estimated_delivery"])
+
+                # Calcula elegibilidade de devolução para pedidos entregues
+        if row["status"] == "delivered" and pd.notna(row.get("estimated_delivery")) and row["estimated_delivery"]:
+            try:
+                data_entrega = date.fromisoformat(str(row["estimated_delivery"]))
+                dias = (date.today() - data_entrega).days
+                info["dias_desde_entrega"] = dias
+                if dias <= 7:
+                    info["elegivel_devolucao"] = True
+                    info["prazo_devolucao_restante"] = f"{7 - dias} dias restantes"
+                else:
+                    info["elegivel_devolucao"] = False
+                    info["prazo_devolucao_expirado_ha"] = f"{dias - 7} dias"
+            except (ValueError, TypeError):
+                pass
+
+
         if pd.notna(row["notes"]) and row["notes"]:
             info["observacoes"] = row["notes"]
 

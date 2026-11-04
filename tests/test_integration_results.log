@@ -1,0 +1,36 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.6, pytest-9.2.0, pluggy-1.7.0 -- /home/fernando_cir/code/thecirocks/fer_projects/artefact_2/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/fernando_cir/code/thecirocks/fer_projects/artefact_2
+plugins: anyio-4.16.0, platformdirs-4.12.4
+collecting ... collected 20 items
+
+tests/test_integration.py::TestCenariosSugeridos::test_violoes_ate_mil_reais PASSED [  5%]
+tests/test_integration.py::TestCenariosSugeridos::test_endereco_da_loja PASSED [ 10%]
+tests/test_integration.py::TestCenariosSugeridos::test_preco_takamine PASSED [ 15%]
+tests/test_integration.py::TestCenariosSugeridos::test_politica_devolucao PASSED [ 20%]
+tests/test_integration.py::TestSelecaoDeTools::test_busca_guitarras PASSED [ 25%]
+tests/test_integration.py::TestSelecaoDeTools::test_detalhe_produto PASSED [ 30%]
+tests/test_integration.py::TestSelecaoDeTools::test_lista_promocoes PASSED [ 35%]
+tests/test_integration.py::TestSelecaoDeTools::test_lista_categorias PASSED [ 40%]
+tests/test_integration.py::TestRespostasSemTool::test_horario_funcionamento PASSED [ 45%]
+tests/test_integration.py::TestRespostasSemTool::test_formas_pagamento PASSED [ 50%]
+tests/test_integration.py::TestRespostasSemTool::test_garantia PASSED    [ 55%]
+tests/test_integration.py::TestRespostasSemTool::test_prazo_entrega PASSED [ 60%]
+tests/test_integration.py::TestPromptInjection::test_ignorar_instrucoes PASSED [ 65%]
+tests/test_integration.py::TestPromptInjection::test_mudar_persona PASSED [ 70%]
+tests/test_integration.py::TestPromptInjection::test_vazamento_dados PASSED [ 75%]
+tests/test_integration.py::TestPromptInjection::test_sair_do_escopo_forcado PASSED [ 80%]
+tests/test_integration.py::TestEdgeCases::test_fora_de_escopo_clima PASSED [ 85%]
+tests/test_integration.py::TestEdgeCases::test_recomendacao_iniciante PASSED [ 90%]
+tests/test_integration.py::TestEdgeCases::test_consulta_pedido_com_devolucao PASSED [ 95%]
+tests/test_integration.py::TestEdgeCases::test_fora_de_escopo_aulas PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_integration.py: 28 warnings
+  /home/fernando_cir/code/thecirocks/fer_projects/artefact_2/agent.py:60: DeprecationWarning: The model 'claude-sonnet-4-5-20250929' is deprecated and will reach end-of-life on November 30th, 2026.
+  Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    response = client.messages.create(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 20 passed, 28 warnings in 119.14s (0:01:59) ==================
