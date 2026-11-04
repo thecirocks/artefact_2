@@ -1,0 +1,55 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.6, pytest-9.2.0, pluggy-1.7.0 -- /home/fernando_cir/code/thecirocks/fer_projects/artefact_2/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/fernando_cir/code/thecirocks/fer_projects/artefact_2
+plugins: anyio-4.16.0, platformdirs-4.12.4
+collecting ... collected 40 items
+
+tests/test_tools.py::TestBuscarProdutos::test_busca_por_nome PASSED      [  2%]
+tests/test_tools.py::TestBuscarProdutos::test_busca_por_categoria_e_preco PASSED [  5%]
+tests/test_tools.py::TestBuscarProdutos::test_nome_inexistente PASSED    [  7%]
+tests/test_tools.py::TestBuscarProdutos::test_categoria_inexistente PASSED [ 10%]
+tests/test_tools.py::TestBuscarProdutos::test_preco_max_zero PASSED      [ 12%]
+tests/test_tools.py::TestBuscarProdutos::test_busca_sem_filtro_inclui_descontinuados PASSED [ 15%]
+tests/test_tools.py::TestBuscarProdutos::test_sql_injection_no_nome PASSED [ 17%]
+tests/test_tools.py::TestBuscarProdutos::test_script_injection_na_categoria PASSED [ 20%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_produto_existente_com_specs PASSED [ 22%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_produto_com_promocao_ativa PASSED [ 25%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_produto_inexistente PASSED [ 27%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_produto_id_negativo PASSED [ 30%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_produto_id_zero PASSED [ 32%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_produto_sem_promocao PASSED [ 35%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_product_id_absurdo PASSED [ 37%]
+tests/test_tools.py::TestConsultarProdutoDetalhe::test_product_id_float_truncado PASSED [ 40%]
+tests/test_tools.py::TestConsultarPedido::test_pedido_valido PASSED      [ 42%]
+tests/test_tools.py::TestConsultarPedido::test_pedido_com_rastreamento PASSED [ 45%]
+tests/test_tools.py::TestConsultarPedido::test_sem_order_id PASSED       [ 47%]
+tests/test_tools.py::TestConsultarPedido::test_email_errado PASSED       [ 50%]
+tests/test_tools.py::TestConsultarPedido::test_case_insensitive PASSED   [ 52%]
+tests/test_tools.py::TestConsultarPedido::test_nome_errado PASSED        [ 55%]
+tests/test_tools.py::TestConsultarPedido::test_sql_injection_no_email PASSED [ 57%]
+tests/test_tools.py::TestConsultarPedido::test_script_injection_no_nome PASSED [ 60%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_retorna_promocoes PASSED [ 62%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_preco_promocional_menor_que_original PASSED [ 65%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_desconto_entre_zero_e_cem PASSED [ 67%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_campos_obrigatorios PASSED [ 70%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_exatamente_4_promocoes_ativas PASSED [ 72%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_sem_duplicatas PASSED [ 75%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_preco_promocional_calculado_corretamente PASSED [ 77%]
+tests/test_tools.py::TestListarPromocoesAtivas::test_todas_sao_realmente_ativas PASSED [ 80%]
+tests/test_tools.py::TestListarCategorias::test_retorna_categorias PASSED [ 82%]
+tests/test_tools.py::TestListarCategorias::test_contagem_produtos PASSED [ 85%]
+tests/test_tools.py::TestListarCategorias::test_nomes_nao_vazios PASSED  [ 87%]
+tests/test_tools.py::TestListarCategorias::test_contagem_nao_negativa PASSED [ 90%]
+tests/test_tools.py::TestListarCategorias::test_total_9_categorias PASSED [ 92%]
+tests/test_tools.py::TestListarCategorias::test_sem_duplicatas PASSED    [ 95%]
+tests/test_tools.py::TestListarCategorias::test_campos_obrigatorios PASSED [ 97%]
+tests/test_tools.py::TestListarCategorias::test_tem_descricao PASSED     [100%]
+
+=============================== warnings summary ===============================
+tests/test_tools.py::TestBuscarProdutos::test_script_injection_na_categoria
+  /home/fernando_cir/code/thecirocks/fer_projects/artefact_2/tools/functions.py:25: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+    df = df[df["name_cat"].str.contains(categoria, case=False, na=False)]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 40 passed, 1 warning in 0.48s =========================

@@ -3,6 +3,15 @@
 import json
 from tools.data_loader import DB
 import pandas as pd
+import numpy as np
+
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, (np.bool_, np.integer, np.floating)):
+            return obj.item()
+        return super().default(obj)
+
+
 
 def buscar_produtos(nome: str = None, categoria: str = None, preco_max: float = None, preco_min: float = None) -> str:
     """Busca produtos por nome, categoria ou faixa de preço. Retorna produtos ativos, descontinuados e em breve."""
@@ -88,7 +97,7 @@ def consultar_produto_detalhe(product_id: int) -> str:
         "promocao": promo_info,
     }
 
-    return json.dumps(resultado, ensure_ascii=False)
+    return json.dumps(resultado, ensure_ascii=False, cls=NumpyEncoder)
 
 
 
@@ -196,7 +205,7 @@ def listar_promocoes_ativas() -> str:
             "disponivel": p["stock_quantity"] > 0,
         })
 
-    return json.dumps({"promocoes": resultados, "total": len(resultados)}, ensure_ascii=False)
+    return json.dumps({"promocoes": resultados, "total": len(resultados)}, ensure_ascii=False, cls=NumpyEncoder)
 
 
 
