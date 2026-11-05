@@ -12,6 +12,7 @@ os.chdir(BASE_DIR)
 
 TITLE = "Lira - Assistente de IA do Empório da Música"
 ICON = os.path.join(BASE_DIR, "assets", "logo_icon.png")
+USER_ICON = os.path.join(BASE_DIR, "assets", "user_avatar.png")
 
 st.set_page_config(page_title=TITLE, page_icon=ICON, layout="wide")
 
@@ -51,12 +52,13 @@ CATEGORY_IMG = {1: "guitarras", 2: "baixos", 3: "baterias", 4: "teclados", 5: "v
 # Produtos em destaque (um por categoria)
 FEATURED_IDS = [108, 131, 137, 141, 143, 129]
 
-SUGGESTIONS = [
-    "Quero um violão para iniciante",
-    "Quais promoções estão ativas?",
-    "Quero acompanhar meu pedido",
-    "Quais as formas de pagamento?",
-]
+# Rótulo do botão -> mensagem enviada para a Lira
+SUGGESTIONS = {
+    "Violão para iniciante": "Quero um violão para iniciante",
+    "Promoções ativas": "Quais promoções estão ativas?",
+    "Acompanhar pedido": "Quero acompanhar meu pedido",
+    "Formas de pagamento": "Quais as formas de pagamento?",
+}
 
 
 # ---------------------------------------------------------------------------
@@ -126,40 +128,40 @@ html("""
 html, body, [data-testid="stAppViewContainer"] { background: var(--cream); }
 [data-testid="stAppViewContainer"] * { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; }
 header[data-testid="stHeader"] { background: transparent; }
-.block-container { padding-top: 0 !important; padding-bottom: 0 !important; max-width: 1240px; }
+.block-container { padding-top: 4.5rem !important; padding-bottom: 0 !important; max-width: 1080px; }
 .em a { text-decoration: none; }
 .em h1, .em h2, .em h3 { font-family: 'Playfair Display', Georgia, serif !important; color: var(--ink); margin: 0; padding: 0; letter-spacing: 0; }
 .em h1 *, .em h2 *, .em h3 * { font-family: inherit !important; }
 .em-topbar { background: var(--ink); color: #D9CBB4; font-size: 13px; padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: space-between; border-radius: 0 0 10px 10px; }
 .em-topbar a { color: var(--amber); }
 .em-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 18px 4px; }
-.em-header img { height: 58px; }
-.em-nav { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
-.em-nav a { color: var(--ink); font-weight: 600; font-size: 15px; }
+.em-header img { height: 48px; width: auto; max-width: 100%; }
+.em-nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.em-nav a { color: var(--ink); font-weight: 600; font-size: 14px; }
 .em-nav a:hover { color: var(--rust); }
-.em-btn { display: inline-block; background: var(--rust); color: #fff !important; padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+.em-btn { display: inline-block; background: var(--rust); color: #fff !important; padding: 9px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; }
 .em-btn.ghost { background: transparent; border: 1.5px solid var(--amber); color: var(--amber) !important; }
-.em-hero { position: relative; border-radius: 18px; overflow: hidden; min-height: 400px; display: flex; align-items: center; background-size: cover; background-position: right center; }
-.em-hero .txt { position: relative; padding: 48px 44px; max-width: 560px; }
+.em-hero { position: relative; border-radius: 18px; overflow: hidden; min-height: 340px; display: flex; align-items: center; background-size: cover; background-position: right center; }
+.em-hero .txt { position: relative; padding: 38px 36px; max-width: 500px; }
 .em-hero .kicker { color: var(--amber); text-transform: uppercase; letter-spacing: 3px; font-size: 12px; font-weight: 700; }
-.em-hero h1 { color: var(--cream) !important; font-size: 44px !important; line-height: 1.12; margin: 12px 0 14px; }
+.em-hero h1 { color: var(--cream) !important; font-size: 36px !important; line-height: 1.15; margin: 10px 0 12px; }
 .em-hero h1 em { color: var(--amber); }
-.em-hero p { color: #D9CBB4; font-size: 17px; line-height: 1.55; margin-bottom: 26px; }
+.em-hero p { color: #D9CBB4; font-size: 15px; line-height: 1.55; margin-bottom: 26px; }
 .em-hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 .em-perks { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 18px 0 8px; }
 .em-perk { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
 .em-perk .ic { width: 38px; height: 38px; flex: none; border-radius: 50%; background: var(--ink); color: var(--amber); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
 .em-perk b { display: block; color: var(--ink); font-size: 14px; }
 .em-perk span { color: var(--muted); font-size: 13px; }
-.em-sec { margin: 44px 0 16px; display: flex; align-items: end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.em-sec h2 { font-size: 32px !important; }
+.em-sec { margin: 36px 0 14px; display: flex; align-items: end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.em-sec h2 { font-size: 28px !important; }
 .em-sec p { color: var(--muted); margin: 4px 0 0; }
-.em-cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.em-cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 .em-cat { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 5 / 3; background-size: cover; background-position: center; display: flex; align-items: flex-end; }
 .em-cat .lbl { padding: 18px; background: linear-gradient(90deg, rgba(15,12,9,.78), rgba(15,12,9,0)); width: 70%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
 .em-cat .ttl { font-family: 'Playfair Display', Georgia, serif !important; color: #fff; font-weight: 700; line-height: 1.2; font-size: 24px; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
 .em-cat span { color: var(--amber); font-size: 13px; font-weight: 600; }
-.em-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.em-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
 .em-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
 .em-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
 .em-card .body { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
@@ -173,7 +175,7 @@ header[data-testid="stHeader"] { background: transparent; }
 .em-card .tag { position: absolute; top: 12px; left: 12px; background: var(--ink); color: var(--amber); font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; }
 .em-lira { background: var(--ink); border-radius: 18px; padding: 28px 30px; margin-bottom: 14px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-top: 44px; }
 .em-lira img { width: 72px; height: 72px; }
-.em-lira h2 { color: var(--cream) !important; font-size: 30px !important; }
+.em-lira h2 { color: var(--cream) !important; font-size: 26px !important; }
 .em-lira p { color: #D9CBB4; margin: 6px 0 0; max-width: 760px; }
 .em-footer { background: var(--ink); color: #D9CBB4; border-radius: 18px 18px 0 0; margin-top: 56px; padding: 40px 34px 0; }
 .em-footer .cols { display: grid; grid-template-columns: 1.1fr 1fr 1.3fr 1fr; gap: 28px; }
@@ -181,7 +183,7 @@ header[data-testid="stHeader"] { background: transparent; }
 @media (max-width: 960px) { .em-footer .cols { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); } }
 .em-footer li { margin-bottom: 6px; }
 .em-footer li small { display: block; color: #9C8E7C; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; line-height: 1.4; }
-.em-footer img { height: 54px; }
+.em-footer img { height: 46px; width: auto; max-width: 100%; }
 .em-footer h4 { color: var(--amber); text-transform: uppercase; letter-spacing: 2px; font-size: 13px; margin: 0 0 12px; }
 .em-footer p, .em-footer li { font-size: 14px; line-height: 1.7; margin: 0; }
 .em-footer ul { list-style: none; padding: 0; margin: 0; }
@@ -197,7 +199,7 @@ div[data-testid="stVerticalBlockBorderWrapper"]:has([data-testid="stChatMessage"
 @media (max-width: 640px) {
   .em-hero { min-height: 0; background-position: 70% center; }
   .em-hero .txt { padding: 30px 22px; background: linear-gradient(90deg, rgba(15,12,9,.85), rgba(15,12,9,.55)); }
-  .em-hero h1 { font-size: 32px !important; }
+  .em-hero h1 { font-size: 28px !important; }
   .em-sec h2 { font-size: 26px !important; }
   .em-nav { gap: 14px; }
   .em-header img { height: 46px; }
@@ -320,16 +322,16 @@ if "messages" not in st.session_state:
 
 pending = None
 cols = st.columns(len(SUGGESTIONS))
-for col, suggestion in zip(cols, SUGGESTIONS):
-    if col.button(suggestion, width="stretch"):
-        pending = suggestion
+for col, (label, message) in zip(cols, SUGGESTIONS.items()):
+    if col.button(label, width="stretch"):
+        pending = message
 
 chat_box = st.container(height=460)
 with chat_box:
     with st.chat_message("assistant", avatar=ICON):
         st.markdown("Olá! Eu sou a Lira, assistente de IA do Empório da Música. Como posso te ajudar hoje?")
     for msg in st.session_state.messages:
-        avatar = ICON if msg["role"] == "assistant" else None
+        avatar = ICON if msg["role"] == "assistant" else USER_ICON
         with st.chat_message(msg["role"], avatar=avatar):
             st.markdown(msg["content"])
 
@@ -340,7 +342,7 @@ prompt = prompt or pending
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     with chat_box:
-        with st.chat_message("user"):
+        with st.chat_message("user", avatar=USER_ICON):
             st.markdown(prompt)
         with st.chat_message("assistant", avatar=ICON):
             history = st.session_state.conversation_history
