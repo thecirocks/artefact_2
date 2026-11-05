@@ -49,7 +49,7 @@ python -m pytest tests/test_integration.py -v     # 20 testes de integração (u
 | Acesso a dados | **Function calling** | Dados pequenos (65 produtos, 20 pedidos). Text-to-SQL e RAG adicionam complexidade sem ganho real |
 | Políticas da loja | **System prompt direto** | Documento curto (~8 páginas). Injetar no system prompt é mais confiável que RAG com embeddings para esse volume |
 | Modelo e provedor | **Claude Sonnet 4.5** (Anthropic) | Bom equilíbrio custo/qualidade para function calling. ~$0.03 por conversa - Adicinei USD 5 para esse case |
-| Interface | **CLI + Streamlit** | CLI para desenvolvimento e testes. Streamlit para demo online com deploy gratuito no Streamlit Cloud |
+| Interface | **CLI + Streamlit** | CLI para desenvolvimento e testes. Interface Streamlit criada via Claude Code e deploy  no Streamlit Cloud |
 | Histórico de conversa | **Em memória** | Mantido durante a sessão para conversas multi-turno. Sem persistência em disco — suficiente para o escopo |
 | Tratamento de dados | **Nenhum pipeline ETL** | Dados fornecidos já estão limpos: sem nulls relevantes, tipos consistentes, specs em JSON válido |
 
@@ -147,7 +147,7 @@ Resultados: 20/20 testes de integração passando (100%). Conversas-exemplo com 
 
 ## Uso de IA
 
-Utilizei o **Claude** (Anthropic) como assistente para interagir comigo no momento de pré desenvolvimento - definição de escopo, problema, entregáveis e arquitetura, além de blocos de código maiores e complexos;
+Utilizei o **Claude** (Anthropic) como assistente para interagir comigo no momento de pré desenvolvimento - definição de escopo, problema, entregáveis e arquitetura, além de blocos de código maiores e complexos. A interface Streamlit foi criada usando o Claude Code (claude.ai/code), que gerou o app.py e commitou direto no repositório.
 
 A IA foi usada como acelerador, não como substituto. Todas as decisões de arquitetura, avaliação de respostas e validação dos dados foram feitas por mim.
 
