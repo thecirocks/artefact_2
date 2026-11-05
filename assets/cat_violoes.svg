@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><defs>
+<linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7B26A"/><stop offset="1" stop-color="#B9773A"/></linearGradient>
+<radialGradient id="burst" cx="0.5" cy="0.6" r="0.6"><stop offset="0" stop-color="#F2B24A"/><stop offset="0.6" stop-color="#C2502E"/><stop offset="1" stop-color="#4A1A0C"/></radialGradient>
+<linearGradient id="black" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B332B"/><stop offset="1" stop-color="#0E0B08"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C98B25"/><stop offset="0.5" stop-color="#F6D27A"/><stop offset="1" stop-color="#B57A1C"/></linearGradient>
+<linearGradient id="ukewood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0CF98"/><stop offset="1" stop-color="#C98F4E"/></linearGradient>
+
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B2614"/><stop offset="1" stop-color="#7A4A22"/></linearGradient></defs>
+<rect width="400" height="240" fill="url(#bg)"/>
+<circle cx="300" cy="120" r="118" fill="#E3A23B" opacity="0.10"/><circle cx="300" cy="120" r="84" fill="none" stroke="#E3A23B" stroke-width="1.5" opacity="0.35"/>
+<g transform="translate(202,22) scale(0.98) rotate(-28 100 100)"><g>
+<rect x="94" y="14" width="12" height="66" rx="2" fill="#6B4423"/>
+<line x1="94" y1="24" x2="106" y2="24" stroke="#E3A23B" stroke-width="0.8"/><line x1="94" y1="32" x2="106" y2="32" stroke="#E3A23B" stroke-width="0.8"/><line x1="94" y1="40" x2="106" y2="40" stroke="#E3A23B" stroke-width="0.8"/><line x1="94" y1="48" x2="106" y2="48" stroke="#E3A23B" stroke-width="0.8"/><line x1="94" y1="56" x2="106" y2="56" stroke="#E3A23B" stroke-width="0.8"/><line x1="94" y1="64" x2="106" y2="64" stroke="#E3A23B" stroke-width="0.8"/><line x1="94" y1="72" x2="106" y2="72" stroke="#E3A23B" stroke-width="0.8"/>
+<rect x="89" y="0" width="22" height="22" rx="5" fill="#3A2614"/><circle cx="86" cy="6" r="2.6" fill="#E3A23B"/><circle cx="86" cy="12" r="2.6" fill="#E3A23B"/><circle cx="86" cy="18" r="2.6" fill="#E3A23B"/><circle cx="114" cy="6" r="2.6" fill="#E3A23B"/><circle cx="114" cy="12" r="2.6" fill="#E3A23B"/><circle cx="114" cy="18" r="2.6" fill="#E3A23B"/>
+<path d="M100,72 C76,72 66,86 70,102 C72,110 62,116 58,130 C52,156 72,188 100,188 C128,188 148,156 142,130 C138,116 128,110 130,102 C134,86 124,72 100,72Z" fill="url(#wood)" stroke="#3A2614" stroke-width="2.5"/>
+<circle cx="100" cy="116" r="17" fill="none" stroke="#3A2614" stroke-width="2.5" opacity="0.6"/>
+<circle cx="100" cy="116" r="12.5" fill="#22150A"/>
+<rect x="84" y="150" width="32" height="8" rx="3" fill="#3A2614"/>
+<line x1="96" y1="4" x2="96" y2="154" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/><line x1="98.7" y1="4" x2="98.7" y2="154" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/><line x1="101.3" y1="4" x2="101.3" y2="154" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/><line x1="104" y1="4" x2="104" y2="154" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/>
+</g></g></svg>

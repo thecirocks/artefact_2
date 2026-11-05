@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><defs>
+<linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7B26A"/><stop offset="1" stop-color="#B9773A"/></linearGradient>
+<radialGradient id="burst" cx="0.5" cy="0.6" r="0.6"><stop offset="0" stop-color="#F2B24A"/><stop offset="0.6" stop-color="#C2502E"/><stop offset="1" stop-color="#4A1A0C"/></radialGradient>
+<linearGradient id="black" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B332B"/><stop offset="1" stop-color="#0E0B08"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C98B25"/><stop offset="0.5" stop-color="#F6D27A"/><stop offset="1" stop-color="#B57A1C"/></linearGradient>
+<linearGradient id="ukewood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0CF98"/><stop offset="1" stop-color="#C98F4E"/></linearGradient>
+
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A2A0E"/><stop offset="1" stop-color="#A0752A"/></linearGradient></defs>
+<rect width="400" height="240" fill="url(#bg)"/>
+<circle cx="300" cy="120" r="118" fill="#E3A23B" opacity="0.10"/><circle cx="300" cy="120" r="84" fill="none" stroke="#E3A23B" stroke-width="1.5" opacity="0.35"/>
+<g transform="translate(202,22) scale(0.98) rotate(22 100 100)"><g>
+<rect x="95" y="52" width="10" height="56" rx="2" fill="#6B4423"/>
+<rect x="90" y="40" width="20" height="20" rx="5" fill="#3A2614"/><circle cx="88" cy="46" r="2.4" fill="#E3A23B"/><circle cx="88" cy="54" r="2.4" fill="#E3A23B"/><circle cx="112" cy="46" r="2.4" fill="#E3A23B"/><circle cx="112" cy="54" r="2.4" fill="#E3A23B"/>
+<path d="M100,100 C82,100 75,110 78,122 C79,128 72,134 70,144 C66,164 80,186 100,186 C120,186 134,164 130,144 C128,134 121,128 122,122 C125,110 118,100 100,100Z" fill="url(#ukewood)" stroke="#3A2614" stroke-width="2.5"/>
+<circle cx="100" cy="134" r="9.5" fill="#22150A"/>
+<rect x="88" y="160" width="24" height="7" rx="3" fill="#3A2614"/>
+<line x1="97" y1="44" x2="97" y2="163" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/><line x1="99" y1="44" x2="99" y2="163" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/><line x1="101" y1="44" x2="101" y2="163" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/><line x1="103" y1="44" x2="103" y2="163" stroke="#F7F1E6" stroke-width="0.7" opacity="0.85"/>
+</g></g></svg>
