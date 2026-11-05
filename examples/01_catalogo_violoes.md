@@ -2,6 +2,15 @@
 
 Conversa gerada automaticamente para demonstrar o agente Lira.
 
+# Avaliação Fernando Cirone
+# Overall: 10
+# Tone: 10 - tom amigável e profissional
+# Clarity: 10 - direto ao ponto
+# Accuracy: 10 - dados corretos (preços, estoque, specs batem com DB)
+# Policy Compliance: N/A - nenhuma política aplicada nesse cenário
+# Tool Selection: 10 - usou buscar_produtos corretamente
+# Hallucination: 10 - não inventou informação
+
 ---
 
 **Cliente:** Quais opções de violões disponíveis custando até R$1000?

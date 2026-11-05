@@ -2,6 +2,17 @@
 
 Conversa gerada automaticamente para demonstrar o agente Lira.
 
+# Avaliação Fernando Cirone
+# Overall: 10
+# Tone: 10 - empático e profissional
+# Clarity: 10 - explicou o processo passo a passo
+# Accuracy: 10 - dados do pedido 4 corretos (produto, valor, data entrega)
+# Policy Compliance: 10 - negou devolução por prazo expirado (310 dias), ofereceu garantia como alternativa
+# Tool Selection: 10 - usou consultar_pedido corretamente com os 3 identificadores
+# Hallucination: 10 - não inventou informação
+
+
+
 ---
 
 **Cliente:** Me arrependi da minha compra, posso devolver meu pedido?

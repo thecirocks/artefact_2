@@ -2,6 +2,16 @@
 
 Conversa gerada automaticamente para demonstrar o agente Lira.
 
+# Avaliação Fernando Cirone
+# Overall: 10
+# Tone: 10 - entusiasmado sem exagero
+# Clarity: 10 - listou todas as promoções com preço original e promocional
+# Accuracy: 10 - 4 promoções ativas, descontos e preços batem com promotions.csv e products.csv
+# Policy Compliance: 10 - mencionou corretamente que desconto PIX não acumula com promoção
+# Tool Selection: 10 - usou listar_promocoes_ativas corretamente
+# Hallucination: 10 - não inventou informação
+
+
 ---
 
 **Cliente:** Quais promoções vocês têm ativas agora?

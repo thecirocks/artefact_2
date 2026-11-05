@@ -2,6 +2,16 @@
 
 Conversa gerada automaticamente para demonstrar o agente Lira.
 
+# Avaliação Fernando Cirone
+# Overall: 10
+# Tone: 10 - tom amigável e acolhedor
+# Clarity: 9 - informação direta e completa - trouxe informação de horário sem ser perguntado
+# Accuracy: 10 - endereço, horário e contatos batem com políticas da loja
+# Policy Compliance: N/A - nenhuma política aplicada nesse cenário
+# Tool Selection: 10 - respondeu do system prompt, sem chamar tool (correto)
+# Hallucination: 10 - não inventou informação
+
+
 ---
 
 **Cliente:** Qual o endereço da loja?
