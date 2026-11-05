@@ -6,9 +6,9 @@ Lira é uma agente de atendimento por mensagens de texto do Empório da Música,
 
 🔗 **Demo online:** [artefact-thecirocks.streamlit.app](https://artefact-thecirocks.streamlit.app/)
 
-![alt text]({2FBA471A-CDAB-473D-AE30-5A50625F7EE0}.png)
-
-![alt text]({36E9F258-8A74-40DC-83F2-F8670E67A246}.png)
+![Lira - Catálogo](assets/Lira_1.jpg)
+![Lira - Conversa](assets/Lira_2.jpg)
+![Lira - Devolução](assets/Lira_3.jpg)
 
 ---
 
