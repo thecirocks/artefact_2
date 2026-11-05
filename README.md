@@ -4,6 +4,8 @@ Lira é uma agente de atendimento por mensagens de texto do Empório da Música,
 
 > Desafio Técnico — AI Engineer @ Artefact
 
+🔗 **Demo online:** [artefact-thecirocks.streamlit.app](https://artefact-thecirocks.streamlit.app/)
+
 ---
 
 ## Setup
@@ -43,7 +45,7 @@ python -m pytest tests/test_integration.py -v     # 20 testes de integração (u
 | Acesso a dados | **Function calling** | Dados pequenos (65 produtos, 20 pedidos). Text-to-SQL e RAG adicionam complexidade sem ganho real |
 | Políticas da loja | **System prompt direto** | Documento curto (~8 páginas). Injetar no system prompt é mais confiável que RAG com embeddings para esse volume |
 | Modelo e provedor | **Claude Sonnet 4.5** (Anthropic) | Bom equilíbrio custo/qualidade para function calling. ~$0.03 por conversa - Adicinei USD 5 para esse case |
-| Interface | **CLI** | Foco no agente funcionando corretamente, conforme orientação do desafio |
+| Interface | **CLI + Streamlit** | CLI para desenvolvimento e testes. Streamlit para demo online com deploy gratuito no Streamlit Cloud |
 | Histórico de conversa | **Em memória** | Mantido durante a sessão para conversas multi-turno. Sem persistência em disco — suficiente para o escopo |
 | Tratamento de dados | **Nenhum pipeline ETL** | Dados fornecidos já estão limpos: sem nulls relevantes, tipos consistentes, specs em JSON válido |
 
@@ -129,7 +131,6 @@ Resultados: 20/20 testes de integração passando (100%). Conversas-exemplo com 
 
 ## O Que Faria Com Mais Tempo
 
-- **Interface**: Streamlit com deploy no Streamlit Cloud para demo online
 - **WhatsApp**: integração via API do WhatsApp Business
 - **Multi-agente**: subagents para tarefas específicas (venda, pós-venda, suporte) com human-in-the-loop para aprovações
 - **Pós-venda ativo**: retargeting, pedido de avaliação do atendimento, acompanhamento de entrega
@@ -155,6 +156,7 @@ artefact_2/
 ├── agent.py                  # Orquestrador principal (loop de function calling)
 ├── config.py                 # Configurações (API key, modelo)
 ├── data_loader.py            # Carregamento singleton dos CSVs
+├── app.py                    # Interface Streamlit (demo online)
 ├── generate_examples.py      # Script para gerar conversas-exemplo
 ├── requirements.txt          # Dependências
 ├── data/                     # CSVs e PDF de políticas
